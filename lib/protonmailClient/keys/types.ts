@@ -1,7 +1,6 @@
 import { IBaseAPIResponse } from "../types";
 
 export interface IAddressResponse extends IBaseAPIResponse {
-    AccessToken: string;
     Addresses: IAddressObject[]
 }
 
@@ -18,7 +17,7 @@ export interface IAddressObject {
     Order: number;
     Priority: number;
     HasKeys: number;
-    SignedKeyList: any;
+    SignedKeyList?: any;
     Keys: IAddressKeyObject[];
 }
 
@@ -31,10 +30,10 @@ export interface IAddressKeyObject {
     PublicKey: string;
     Active: number;
     Version: number;
-    Activation: any;
+    Activation?: any;
     PrivateKey: string;
-    Token: any;
-    Signature: any;
+    Token?: any;
+    Signature?: any;
 }
 
 export interface IKeySaltsResponse extends IBaseAPIResponse {

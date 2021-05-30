@@ -36,7 +36,6 @@ export const AddressObject = t.type({
 export const AddressResponse = t.intersection([
     BaseAPIResponse,
     t.type({
-        AccessToken: t.string,
         Addresses: t.array(AddressObject),
     }),
 ]);

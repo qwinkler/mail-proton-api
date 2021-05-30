@@ -10,7 +10,7 @@ module.exports = {
         browser: true,
         es6: true,
         jest: true,
-        node: true
+        node: true,
     },
     rules: {
         "no-unused-vars": "off",
@@ -26,9 +26,14 @@ module.exports = {
         "comma-dangle": ["error", "always-multiline"],
         "object-curly-newline": ["error", {
             "ObjectExpression": "always",
-            "ObjectPattern": { "multiline": true },
+            "ObjectPattern": {
+                "multiline": true,
+            },
             "ImportDeclaration": "never",
-            "ExportDeclaration": { "multiline": true, "minProperties": 3 }
-        }]
+            "ExportDeclaration": {
+                "multiline": true,
+                "minProperties": 3,
+            },
+        }],
     },
-}
+};
