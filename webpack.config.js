@@ -2,7 +2,6 @@ const path = require("path");
 const TerserPlugin = require("terser-webpack-plugin");
 const nodeExternals = require("webpack-node-externals");
 const pkg = require("./package.json");
-// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 const getConfig = (target) => {
     return {
@@ -17,29 +16,30 @@ const getConfig = (target) => {
                 },
             ],
         },
-        plugins: [
-            // new BundleAnalyzerPlugin()
-        ],
         resolve: {
             extensions: [".tsx", ".ts", ".js", ".json"],
+            fallback: target === "web" ? {
+                crypto: false,
+                stream: false,
+                buffer: false,
+            } : {
+                "stream": require.resolve("stream-browserify"),
+                "buffer": require.resolve("buffer"),
+            },
         },
         output: {
             filename: (target === "web" ? pkg.browser : pkg.main).replace(/.*\//g, ""),
             path: path.resolve(__dirname, "dist"),
-            library: "proton-api",
+            library: "protonmail-api",
             libraryTarget: "umd",
         },
         optimization: {
             minimizer: [
                 new TerserPlugin({
-                    sourceMap: true,
                     parallel: true,
                 }),
             ],
         },
-        node: target === "web" ? {
-            crypto: false,
-        } : undefined,
         target: target === "web" ? "web" : "node",
         externals: target === "web" ? undefined : [nodeExternals()],
         devtool: "source-map",

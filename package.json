@@ -1,7 +1,7 @@
 {
-  "name": "proton-api",
-  "version": "1.0.6",
-  "description": "Unofficial API for ProtonMail. Works both in browser and Node.js",
+  "name": "protonmail-api",
+  "version": "1.1.0",
+  "description": "Unofficial ProtonMail API",
   "keywords": [
     "protonmail",
     "proton"
@@ -11,46 +11,49 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gitladen7/proton-api.git"
+    "url": "https://github.com/qwinkler/protonmail-api.git"
   },
   "scripts": {
     "pretest": "eslint --ext .js,.ts .",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "clean": "rimraf dist",
-    "build": "npm run clean && webpack --display-modules --mode=production",
+    "build": "npm run clean && webpack --mode=production",
     "prepublishOnly": "npm run test && npm run build"
   },
-  "author": "gitladen7",
+  "author": "qwinkler",
   "license": "MIT",
   "dependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/create-hash": "^1.2.1",
-    "@types/node": "^12.7.11",
+    "@types/node": "^15.6.1",
     "@types/randombytes": "^2.0.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "bignumber.js": "^9.0.0",
+    "buffer": "^6.0.3",
     "create-hash": "^1.2.0",
-    "randombytes": "^2.1.0"
+    "openpgp": "^5.0.0-3",
+    "randombytes": "^2.1.0",
+    "stream-browserify": "^3.0.0"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.18",
-    "@typescript-eslint/eslint-plugin": "^2.3.3",
-    "@typescript-eslint/parser": "^2.3.3",
-    "eslint": "^6.5.1",
-    "jest": "^24.9.0",
+    "@types/jest": "^26.0.23",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
+    "eslint": "^7.27.0",
+    "jest": "^27.0.3",
     "rimraf": "^3.0.0",
-    "ts-jest": "^24.1.0",
-    "ts-loader": "^6.2.0",
-    "ts-node": "^8.4.1",
-    "typescript": "^3.6.3",
-    "webpack": "^4.41.0",
-    "webpack-bundle-analyzer": "^3.5.2",
-    "webpack-cli": "^3.3.9",
-    "webpack-node-externals": "^1.7.2",
-    "fp-ts": "^2.1.0",
-    "io-ts": "^2.0.1"
+    "ts-jest": "^27.0.1",
+    "ts-loader": "^9.2.2",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2",
+    "webpack": "^5.38.1",
+    "webpack-bundle-analyzer": "^4.4.2",
+    "webpack-cli": "^4.7.0",
+    "webpack-node-externals": "^3.0.0",
+    "fp-ts": "^2.10.5",
+    "io-ts": "^2.2.16"
   },
   "files": [
     "/dist"

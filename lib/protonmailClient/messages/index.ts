@@ -81,4 +81,17 @@ export class MessagesRoutes {
         });
         return response.data;
     }
+
+    public async delete(IDs: string[]) {
+        const response = await this.client.request<IMessagesFlagResponse>({
+            method: "put",
+            url: "messages/delete",
+            data: {
+                IDs,
+                // You can only delete the message from Trash
+                LabelID: DefaultLabels.Trash,
+            },
+        });
+        return response.data;
+    }
 }
