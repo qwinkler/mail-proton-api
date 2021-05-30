@@ -1,5 +1,5 @@
 {
-  "name": "protonmail-api",
+  "name": "mail-proton-api",
   "version": "1.1.0",
   "description": "Unofficial ProtonMail API",
   "keywords": [
@@ -11,7 +11,7 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qwinkler/protonmail-api.git"
+    "url": "git+https://github.com/qwinkler/mail-proton-api.git"
   },
   "scripts": {
     "pretest": "eslint --ext .js,.ts .",
@@ -59,9 +59,9 @@
     "/dist"
   ],
   "bugs": {
-    "url": "https://github.com/qwinkler/protonmail-api/issues"
+    "url": "https://github.com/qwinkler/mail-proton-api/issues"
   },
-  "homepage": "https://github.com/qwinkler/protonmail-api#readme",
+  "homepage": "https://github.com/qwinkler/mail-proton-api#readme",
   "directories": {
     "lib": "lib"
   }

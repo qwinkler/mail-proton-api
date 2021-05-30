@@ -30,7 +30,7 @@ const getConfig = (target) => {
         output: {
             filename: (target === "web" ? pkg.browser : pkg.main).replace(/.*\//g, ""),
             path: path.resolve(__dirname, "dist"),
-            library: "protonmail-api",
+            library: "mail-proton-api",
             libraryTarget: "umd",
         },
         optimization: {

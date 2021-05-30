@@ -1,11 +1,11 @@
-# protonmail-api
+# mail-proton-api
 
 Unofficial API for ProtonMail. Works both in browser and Node.js
 
 # Usage example
 
 ```js
-const protonmail = require('protonmail-api');
+const protonmail = require('mail-proton-api');
 
 (async () => {
     const client = new protonmail.ProtonmailClient();
